@@ -1,0 +1,33 @@
+<div class="container mt-5">
+    <h2 class="text-center">Calculateur de Monnaie</h2>
+    <div class="mb-3">
+      <label for="price" class="form-label">Prix de l'achat (€):</label>
+      <div class="input-group">
+        <input #priceInput type="number" class="form-control" placeholder="Entrez le prix" />
+        <button class="btn btn-primary input-group-append" (click)="addPrice(priceInput.value)">Ajouter</button>
+      </div>
+    </div>
+    <div class="mb-3">
+      <h3>Liste des achats:</h3>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let price of prices">{{ price }} €</li>
+      </ul>
+    </div>
+    <div class="mb-3">
+      <h3>Total: {{ total }} €</h3>
+    </div>
+    <div class="mb-3">
+      <label for="paid" class="form-label">Somme Payée (€):</label>
+      <div class="input-group">
+        <input #paidInput type="number" class="form-control" placeholder="Entrez le montant payé" />
+        <button class="btn btn-success input-group-append" (click)="calculateChange(paidInput.value)">Calculer Monnaie</button>
+      </div>
+    </div>
+    <div *ngIf="change >= 0" class="alert alert-info">
+      <h3>Monnaie à rendre: {{ change }} €</h3>
+      <div *ngIf="dixEuroBills > 0">{{ dixEuroBills }} x 10 Euros</div>
+      <div *ngIf="cinqEuroBills > 0">{{ cinqEuroBills }} x 5 Euros</div>
+      <div *ngIf="unEuroCoins > 0">{{ unEuroCoins }} x 1 Euro</div>
+    </div>
+  </div>
+  

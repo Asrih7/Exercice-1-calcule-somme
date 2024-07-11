@@ -1,0 +1,21 @@
+.container {
+    max-width: 600px;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  .input-group .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  
+  .mb-3 h3 {
+    margin-top: 20px;
+  }
+  
+  .alert {
+    margin-top: 20px;
+  }
+  
